@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <EditText
+        android:id="@+id/sms_body"
+        android:hint="Enter your message here"
+        android:inputType="textMultiLine"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:ems="10"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+         />
+
+
+
+    <EditText
+        android:id="@+id/sms_number"
+        android:layout_width="329dp"
+        android:layout_height="69dp"
+        android:inputType="number"
+        android:textColor="@color/colorPrimary"
+        android:ems="10"
+        android:textSize="20sp"
+        android:hint="Enter phone number here"
+        android:textAlignment="center"
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/send_button"
+        android:layout_width="197dp"
+        android:layout_height="70dp"
+        android:text="Send"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:layout_marginTop="14dp"
+        android:layout_weight="0.09" />
+
+</LinearLayout>
