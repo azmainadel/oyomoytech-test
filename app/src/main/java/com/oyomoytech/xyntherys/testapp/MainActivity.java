@@ -52,10 +52,9 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setMessage("Are you sure you want to call Ajoy Das?");
 
-        alertDialogBuilder.setNeutralButton("Yes", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface arg0, int arg1) {
-                //Toast.makeText(MainActivity.this,"You clicked yes button",Toast.LENGTH_LONG).show();
 
                 Intent call = new Intent(Intent.ACTION_CALL, Uri.parse("tel:01521487525"));
                 try {
@@ -64,18 +63,22 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Call Failed", Toast.LENGTH_SHORT).show();
                 }
 
-
             }
+        });
+
+
+        alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this,"So you don't want to call him...",Toast.LENGTH_LONG).show();
+            }
+
         });
 
 
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
 
-        final Button neutralButton = alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL);
-        LinearLayout.LayoutParams neutralButtonLL = (LinearLayout.LayoutParams) neutralButton.getLayoutParams();
-        neutralButtonLL.gravity = Gravity.CENTER;
-        neutralButton.setLayoutParams(neutralButtonLL);
 
     }
 
